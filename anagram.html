@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Anagram</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+		<script>
+			word1 = prompt("Enter the 1st word");
+			word2 = prompt("Enter the 2nd word");
+			
+			if (anagram(word1, word2) == true) {
+				alert(word1 + " and " + word2 + " are anagrams!");
+			}
+			
+			else
+				alert(word1 + " and " + word2 + " are not anagrams!");
+			
+			function anagram(input1, input2) {
+				onesplit = input1.toLowerCase().split("").sort().join("");
+				twosplit = input2.toLowerCase().split("").sort().join("");
+				
+				if (onesplit == twosplit) {
+					return true;
+				}
+				
+				else
+					return false;
+			}
+		</script>
+	</body>
+</html>
