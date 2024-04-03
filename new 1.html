@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		 table {
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 2px solid black;
+                padding: 5px;
+                width: 100px;
+            }
+		</style>
+	</head>
+	<body>
+		<table id="table">
+		</table>
+		<script>
+			//enter the numbers
+			do {
+				var n = parseInt(prompt("Enter a number:"));
+			} while (n < 2 || n > 10);
+			
+			do {
+				var m = parseInt(prompt("Enter a number(2):"));
+			} while (m < 2 || m > 10);
+			
+			//the table code
+			const table = document.getElementById("table");
+			for (var row = 1; row != n+1; row++) {
+				const rows = table.insertRow(-1);
+				console.log(row);
+				
+				//insert cell for each iteration in m
+				for (var column = 1; column != m+1; column++) {
+					const columns = rows.insertCell(-1);
+					columns.innerHTML = column * row;
+					console.log(column);
+				}
+			}
+		</script>
+	</body>
+</html>
