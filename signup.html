@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sign up now at arianne.com</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>	
+		</style>
+	</head>
+	<body>
+		<script>
+			function nuhuh(id) {
+				document.getElementById(id).style.borderColor = "red";
+			}
+		</script>
+		<form>
+			<fieldset>
+				<legend>Sign Up!:</legend>
+				<!--Name-->
+				<label for="name">Name: </label> <br>
+				<input name="name" id="name" type="text" placeholder="Enter your name" autofocus onblur="nuhuh('name')"> <br><br>
+				
+				<!--Username-->
+				<label for="username">Username: </label> <br>
+				<input name="username" id="username" type="text" placeholder="Preferred username" onblur="nuhuh('username')"> <br><br>
+				
+				<!--Gender-->
+				<input name="gender" id="malegen" type="radio" value="male">
+				<label for="gender"> Male </label>
+				<input name="gender" id="femgen" type="radio" value="female">
+				<label for="gender"> Female </label>
+				<input name="gender" id="nongen" type="radio" value="nomention"> 
+				<label for="gender"> Prefer not to mention </label> <br><br>
+				
+				<!--Password-->
+				<label for="password">Password: </label> <br>
+				<input name="password" id="password" type="password" placeholder="Enter your password" onblur="nuhuh('password')"> <br><br>
+				
+				<!--Email-->
+				<label for="eemail">Email: </label> <br>
+				<input name="eemail" id="eemail" type="email" placeholder="Enter a valid email address" onblur="nuhuh('eemail')"> <br><br>
+				
+				<!--Address-->
+				<label for="address">Address: </label> <br>
+				<textarea name="address" id="address" type="text" placeholder="Enter your address" rows=10 cols=30 onblur="nuhuh('address')"></textarea> <br><br>
+				
+				<!--Buttons-->
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset">
+		</form>
+	</body>
+</html>
