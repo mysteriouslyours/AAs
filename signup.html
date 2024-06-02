@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Sign up now at arianne.com</title>
+		<title>Beginner's Guide to Minimalist Designs</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>	
-		</style>
+		<style>
+			body {
+				text-align: center;
+			}
+			
+			form {
+				display: inline-block;
+			}
+			
+			.valid {
+				border: 2px solid green;
+			}
+			.invalid {
+				border: 2px solid red;
+			}
+			
+			.glow-red {
+				animation: glow-red 3s;
+			}
+
+			.glow-green {
+				animation: glow-green 3s;
+			}
+
+			@keyframes glow-red {
+				from {
+					box-shadow: 0 0 5px red;
+				}
+				to {
+					box-shadow: none;
+				}
+			}
+
+			@keyframes glow-green {
+				from {
+					box-shadow: 0 0 5px green;
+				}
+				to {
+					box-shadow: none;
+				}
+			}
+	</style>
 	</head>
 	<body>
-		<script>
-			function nuhuh(id) {
-				document.getElementById(id).style.borderColor = "red";
-			}
-		</script>
+		<h1>Beginner's Guide to Minimalist Designs</h1>
 		<form>
 			<fieldset>
-				<legend>Sign Up!:</legend>
+				<legend>Sign Up!</legend>
 				<!--Name-->
 				<label for="name">Name: </label> <br>
-				<input name="name" id="name" type="text" placeholder="Enter your name" autofocus onblur="nuhuh('name')"> <br><br>
+				<input name="name" id="name" type="text" placeholder="Enter your name" autofocus required onblur="validateInput(this)" onfocus="resetInput(this)"> <br><br>
 				
 				<!--Username-->
 				<label for="username">Username: </label> <br>
-				<input name="username" id="username" type="text" placeholder="Preferred username" onblur="nuhuh('username')"> <br><br>
+				<input name="username" id="username" type="text" placeholder="Preferred username" required onblur="validateInput(this)" onfocus="resetInput(this)"> <br><br>
 				
 				<!--Gender-->
-				<input name="gender" id="malegen" type="radio" value="male">
+				<input name="gender" id="malegen" type="radio" value="male" required>
 				<label for="gender"> Male </label>
 				<input name="gender" id="femgen" type="radio" value="female">
 				<label for="gender"> Female </label>
@@ -33,19 +69,36 @@
 				
 				<!--Password-->
 				<label for="password">Password: </label> <br>
-				<input name="password" id="password" type="password" placeholder="Enter your password" onblur="nuhuh('password')"> <br><br>
+				<input name="password" id="password" type="password" placeholder="Enter your password" required onblur="validateInput(this)" onfocus="resetInput(this)"> <br><br>
 				
 				<!--Email-->
 				<label for="eemail">Email: </label> <br>
-				<input name="eemail" id="eemail" type="email" placeholder="Enter a valid email address" onblur="nuhuh('eemail')"> <br><br>
+				<input name="eemail" id="eemail" type="email" placeholder="Enter a valid email address" required onblur="validateInput(this)" onfocus="resetInput(this)"> <br><br>
 				
 				<!--Address-->
 				<label for="address">Address: </label> <br>
-				<textarea name="address" id="address" type="text" placeholder="Enter your address" rows=10 cols=30 onblur="nuhuh('address')"></textarea> <br><br>
+				<textarea name="address" id="address" type="text" placeholder="Enter your address" rows=10 cols=30 required onblur="validateInput(this)" onfocus="resetInput(this)"></textarea> <br><br>
 				
 				<!--Buttons-->
 				<input type="submit" value="Submit">
 				<input type="reset" value="Reset">
+			</fieldset>
 		</form>
+		
+		<script>
+		function validateInput(input) {
+        if (input.value.trim() === '') {
+            input.classList.remove('valid', 'glow-green');
+            input.classList.add('invalid', 'glow-red');
+        } else {
+            input.classList.remove('invalid', 'glow-red');
+            input.classList.add('valid', 'glow-green');
+        }
+		}
+
+		function resetInput(input) {
+			input.classList.remove('valid', 'invalid', 'glow-red', 'glow-green');
+		}
+	</script>
 	</body>
 </html>
